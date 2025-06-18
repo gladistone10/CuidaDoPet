@@ -1,0 +1,6 @@
+@A3_HostAddress = http://localhost:5053
+
+GET {{A3_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

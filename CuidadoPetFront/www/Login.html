@@ -1,0 +1,186 @@
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico" />
+  <title>AmorPet - Registro</title>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/floating-labels/" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link href="floating-labels.css" rel="stylesheet" />
+</head>
+
+<body>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: sans-serif;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      height: 100%;
+    }
+
+    .loginBox {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      min-height: 200px;
+      background: rgb(240, 240, 240);
+      border-radius: 10px;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .user {
+      margin: 0 auto;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 0 0 20px;
+      color: #59238f;
+      text-align: center;
+    }
+
+    .loginBox input {
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 10px;
+
+    }
+
+    .loginBox input[type="text"],
+    .loginBox input[type="password"] {
+      border: none;
+      border-bottom: 2px solid #262626;
+      outline: none;
+      height: 40px;
+      color: #e0e0e0;
+      background: transparent;
+      font-size: 16px;
+      padding-left: 20px;
+      box-sizing: border-box;
+      border-radius: 10px;
+
+    }
+
+    .loginBox input[type="text"]:hover,
+    .loginBox input[type="password"]:hover {
+      color: #050505;
+      border: 1px solid #42f3fa;
+      box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.2),
+        0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 black;
+    }
+
+    .loginBox input[type="text"]:focus,
+    .loginBox input[type="password"]:focus {
+      border-bottom: 2px solid #42f3fa;
+    }
+
+    .inputBox {
+      position: relative;
+    }
+
+    .inputBox span {
+      position: absolute;
+      top: 10px;
+      color: #0e19ad;
+    }
+
+    .loginBox .loginbtn {
+      border: none;
+      outline: none;
+      height: 40px;
+      font-size: 16px;
+      background: #470fca;
+      color: #131313;
+      border-radius: 20px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .loginBox a {
+      color: #262626;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      display: block;
+    }
+
+    a:hover {
+      color: #0f0f0f;
+    }
+
+    p {
+      color: #0000ff;
+    }
+  </style>
+  <div class="loginBox">
+    <img class="user" src="https://c7.alamy.com/comp/KM9BR9/man-with-dog-cartoon-KM9BR9.jpg" height="100px"
+      width="100px" border-radius="100px" />
+    <h3>Bem-Vindo</h3>
+    <div style="padding-bottom:10px">
+      <div class="inputBox">
+        <input id="uname" type="text" name="Usuario" placeholder="Usuario" />
+        <input id="pass" type="password" name="Senha" placeholder="Senha" />
+      </div>
+      <button class="loginbtn" onclick="Login()">Acessar</button>
+    </div>
+    <a href="https://freefrontend.com/bootstrap-login-forms/" style="color: #131313" target="_blank">Esqueci a
+      senha<br /> </a>
+    <div class="text-center">
+      <p style="color: #131313"><a href="registro.html">Cadastre-se</a></p>
+    </div>
+    <script>
+      function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+      }
+
+      function Login() {
+        fetch('http://localhost:5053/Auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: new URLSearchParams({
+            User: document.querySelector("#uname").value,
+            Password: document.querySelector("#pass").value
+          })
+        })
+          .then(response => response.json())
+          .then(data => {
+            if (data.message != "Credenciais inválidas.") {
+              setCookie("Token", data.token, 31);
+              window.location = "/ListaPet.html";
+            }
+            else{
+              alert("Usuario ou senha invalidos");
+            }
+          })
+          .catch(error => console.error('Erro:', error));
+      }
+    </script>
+  </div>
+</body>
+
+</html>

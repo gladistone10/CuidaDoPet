@@ -1,0 +1,160 @@
+body {
+    background: linear-gradient(to right, #f9f9f9, #e8f5e9);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .top-bar {
+      background-color: #00bfff;
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-bar a {
+      display: inline-block;
+    }
+
+    .top-bar img {
+      height: 45px;
+    }
+
+  h1, h4, h5 {
+    color: #2e7d32;
+    font-weight: 600;
+  }
+
+  .btn-outline-secondary {
+      border-radius: 50px;
+      padding: 8px 20px;
+      font-weight: 500;
+      transition: 0.3s;
+      margin-top: 10px;
+      margin-bottom: -50px;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: #00bfff;
+      color: white;
+    }
+
+  .animal-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .animal-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  }
+
+  .icon-img {
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.1));
+  }
+
+  .form-control {
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+
+  .form-control:focus {
+    border-color: #66bb6a;
+    box-shadow: 0 0 0 0.2rem rgba(102, 187, 106, 0.25);
+  }
+
+  .btn-link {
+    color: #388e3c;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .btn-link:hover {
+    text-decoration: underline;
+    color: #2e7d32;
+  }
+
+  .accordion-button {
+    background-color: #f1f8e9;
+    color: #33691e;
+    font-weight: 500;
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: #dcedc8;
+    color: #1b5e20;
+  }
+
+  .accordion-item {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 1px solid #c5e1a5;
+  }
+
+  .list-group-item {
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    font-size: 1rem;
+  }
+
+  .list-group-item:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    .animal-card {
+      padding: 20px 10px;
+    }
+
+    .icon-img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .nav-bottom {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    a {
+      color: #6c757d;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .nav-bottom a.active {
+      color: #6f42c1;
+    }
+
+    .section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease-in;
+    }
+
+    .section.active {
+      display: block;
+      opacity: 1;
+    }

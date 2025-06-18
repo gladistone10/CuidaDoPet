@@ -1,0 +1,167 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #2c3e50;
+}
+
+/* Botão Voltar*/
+#btnVoltar {
+  background-color: #1a237e;
+  color: white;
+}
+
+/* Container principal */
+.container {
+  max-width: 480px;
+  margin: 40px auto 30px auto;
+  padding: 25px 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Título */
+.container h1 {
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  color: #1a237e;
+  font-size: 30px;
+}
+
+#preview-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Formulário */
+form {
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+/* Inputs e textarea */
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1.8px solid #ced4da;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+/* Foco nos campos */
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+  border-color: #3f51b5;
+  outline: none;
+  box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+}
+
+/* Radios e grupo sexo */
+.d-flex.align-items-center {
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+.form-check-label {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Botão */
+button.btn-primary {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: #3f51b5;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button.btn-primary:hover {
+  background-color: #303f9f;
+}
+
+/* Centralização do input de arquivo */
+.text-center.my-3 input[type="file"] {
+  max-width: 300px;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+}
+
+/* Pequena margem entre labels e inputs */
+.mb-3.mx-5,
+.mb-3.mx-0,
+.mb-5.mx-5 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 440px;
+}
+
+/* Estilo do Toast */
+
+.position-fixed.bottom-0.end-0.p-3 {
+  right: 1rem !important;
+  bottom: 1rem !important;
+  z-index: 1080;
+}
+
+.toast {
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 300px;
+  max-width: 360px;
+}
+
+.toast-header {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.toast-body {
+  padding: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.toast .btn-close {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.toast .btn-close:hover {
+  opacity: 1;
+  cursor: pointer;
+}

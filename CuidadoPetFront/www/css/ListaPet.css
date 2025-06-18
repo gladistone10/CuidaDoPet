@@ -1,0 +1,151 @@
+body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+     
+     .top-bar {
+      background-color: #00bfff;
+      padding: 10px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .top-bar a {
+      display: inline-block;
+    }
+
+    .top-bar img {
+      height: 45px;
+    }
+
+    .pet-card {
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      padding: 1rem;
+      transition: transform 0.2s ease-in-out;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .pet-card:hover {
+      transform: translateY(-4px);
+      background-color: #f0f4ff;
+    }
+
+    .pet-male {
+      background-color: #e6f0fa;
+    }
+
+    .pet-female {
+      background-color: #fae6f0;
+    }
+
+    .pet-level {
+      font-weight: bold;
+      color: #4a90e2;
+      font-size: 0.9rem;
+    }
+
+    .pet-image {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0.5rem auto;
+    }
+
+    .pet-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .btn-outline-secondary {
+      background-color: white;
+      color: #007bff;
+      border: 2px solid #007bff;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: #e0ecff;
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 1050;
+    }
+
+    .floating-button .btn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      font-size: 24px;
+      border-radius: 50%;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+    }
+
+    .floating-button .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .dropdown-menu {
+      min-width: 200px;
+      font-size: 0.95rem;
+    }
+
+    .dropdown-item i {
+      margin-right: 0.5rem;
+    }
+
+     .nav-bottom {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      border-top: 1px solid #ddd;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    a {
+      color: #6c757d;
+      text-decoration: none;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .nav-bottom a.active {
+      color: #6f42c1;
+    }
+
+    .section {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease-in;
+    }
+
+    .section.active {
+      display: block;
+      opacity: 1;
+    }
